@@ -1,5 +1,6 @@
 language: rust
-sudo: false
+os: linux
+dist: xenial
 
 cache:
   - cargo
@@ -14,12 +15,15 @@ before_script:
 
 script:
   - mdbook build blog && mdbook test blog
-
+  
 deploy:
   provider: pages
-  skip-cleanup: true
+  strategy: git
+  edge: true
+  cleanup: false
   github-token: $GITHUB_TOKEN
-  local-dir: blog
+  local-dir: blog/book
   keep-history: false
   on:
     branch: main
+  target_branch: gh-pages
