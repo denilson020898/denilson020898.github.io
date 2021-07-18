@@ -1,0 +1,6 @@
+[book]
+authors = ["Denilson"]
+language = "en"
+multilingual = false
+src = "src"
+title = "blog"
