@@ -8,7 +8,7 @@ rust:
   - stable
 
 script:
-  - mdbook build blog && mdbook test blog
+  - mdbook build personal_website && mdbook test personal_website
   
 deploy:
   provider: pages
@@ -16,7 +16,7 @@ deploy:
   edge: true
   cleanup: false
   github-token: $GITHUB_TOKEN
-  local-dir: blog/book
+  local-dir: personal_website/book
   keep-history: false
   on:
     branch: main
